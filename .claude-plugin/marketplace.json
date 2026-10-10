@@ -1,0 +1,1 @@
+{"name":"guochuang-task-window-plugins","owner":{"name":"Guochuang Task Window contributors"},"plugins":[{"name":"guochuang-task-window","source":"./adapters/zcode","description":"独立任务小窗。源码安装需先构建 native，完整包在 GitHub Releases。"}]}

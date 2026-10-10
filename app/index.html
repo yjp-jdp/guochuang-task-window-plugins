@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>国创任务小窗</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="identity">
+        <span class="mark">G</span>
+        <div><strong>任务小窗</strong><small id="host"></small></div>
+      </div>
+      <button id="windowPin" aria-pressed="false">置顶</button
+      ><button id="hide" class="icon" aria-label="收起小窗" title="收起小窗">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14" /></svg>
+      </button>
+    </header>
+    <main>
+      <section class="current">
+        <div class="current-top">
+          <span id="position">今天做什么</span
+          ><button id="expand" class="link">全部任务</button>
+        </div>
+        <h1 id="title">还没有任务</h1>
+        <div id="meta" class="muted"></div>
+        <div class="task-controls">
+          <button id="priority" class="small">优先显示</button
+          ><button id="urgent" class="small">紧急</button
+          ><button id="complete" class="complete">完成</button>
+        </div>
+      </section>
+      <section class="focus">
+        <div class="focus-time">
+          <strong id="clock">00:00</strong
+          ><small id="focusHint">专注于下一件事</small>
+        </div>
+        <button id="record" class="link" disabled>记录</button
+        ><button id="timer" class="primary">开始</button>
+      </section>
+      <p id="reminder" hidden>已专注 45 分钟，起来活动一下吧。</p>
+      <p id="error" role="alert" hidden></p>
+      <section id="workspace" hidden>
+        <div class="section-head">
+          <h2>我的任务 <small id="count"></small></h2>
+          <button id="newTask" class="primary">添加任务</button>
+        </div>
+        <form id="editor" hidden>
+          <h2 id="editorTitle">添加任务</h2>
+          <label
+            >任务名称<input
+              id="taskTitle"
+              maxlength="500"
+              autocomplete="off"
+              required /></label
+          ><label
+            >截止时间 · 可选<input id="taskDue" type="datetime-local"
+          /></label>
+          <div class="form-actions">
+            <button type="button" id="cancelEdit">取消</button
+            ><button class="primary" type="submit">保存任务</button>
+          </div>
+        </form>
+        <form id="noteEditor" hidden>
+          <h2>记录这次专注</h2>
+          <label
+            >完成了什么 · 可不填<textarea
+              id="note"
+              maxlength="4000"
+              placeholder="一句话也可以，留空也能保存"
+            ></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="button" id="cancelNote">稍后记录</button
+            ><button class="primary" type="submit">保存记录</button>
+          </div>
+        </form>
+        <div id="taskList"></div>
+        <div class="section-head">
+          <h2>专注记录</h2>
+          <button id="export" class="link">导出备份</button>
+        </div>
+        <div id="records" tabindex="0"></div>
+      </section>
+    </main>
+    <script src="renderer.js"></script>
+  </body>
+</html>

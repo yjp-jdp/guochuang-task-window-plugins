@@ -1,0 +1,10 @@
+{
+  "name": "guochuang-task-window",
+  "version": "0.1.0",
+  "description": "独立任务小窗：手动任务、专注正计时、可选备注和原生窗口置顶。",
+  "author": { "name": "国创任务小窗 contributors" },
+  "license": "MIT",
+  "skills": "./skills",
+  "commands": "./commands",
+  "mcpServers": "./.mcp.json"
+}
